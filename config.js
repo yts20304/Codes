@@ -27,4 +27,26 @@
         {
             "url": "https://example-shortener3.com/page3",
             "name": "URL Shortener 3",
-            "elements_to_
+            "elements_to_click": [
+                {"selector": "//button[contains(text(), 'Skip')]", "by": "xpath"},
+                {"selector": ".download-link", "by": "css"}
+            ],
+            "wait_time": [4, 9],
+            "scroll_behavior": "thorough",
+            "retry_on_failure": true,
+            "importance_weight": 3
+        },
+        {
+            "url": "https://example-shortener4.com/page4",
+            "name": "URL Shortener 4",
+            "elements_to_click": [
+                {"selector": "#timer", "by": "css", "wait_seconds": 5},
+                {"selector": "//div[contains(@class, 'result')]/a", "by": "xpath"}
+            ],
+            "wait_time": [6, 12],
+            "scroll_behavior": "natural",
+            "retry_on_failure": true,
+            "importance_weight": 2
+        }
+    ]
+}

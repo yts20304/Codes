@@ -1045,6 +1045,13 @@ class WebsiteVisitorBot:
         
         return results
 
+    def run(self) -> None:
+        """Run the bot based on the configuration"""
+        if self.config.sessions_per_day > 1:
+            self.schedule_sessions()
+        else:
+            self.run_now(num_sessions=1)
+
 # Command-line interface
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Advanced Website Visitor Bot')
